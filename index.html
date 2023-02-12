@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>Meal Planner Project</title>
+</head>
+<body>
+    <nav class="navigation"> Meal Planner
+    </nav>
+    <form id="user-form">
+        <div id="div-form">   
+            <input type="value" class="d1" id="height" placeholder="Enter Height" required>
+            <input type="value" class="d1" id="weight" placeholder="Enter Weight" required>
+            <input type="value" class="d1" id="age" placeholder="Enter Age" required>
+     </div>
+   
+     <div id="div-form2">
+        <select id="gender">
+            <option value="gender" hidden disabled selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+  
+          <select id="activity">
+            <option value="levels" hidden disabled selected>
+              Activity Level
+            </option>
+            <option value="light">Light</option>
+            <option value="moderate">Moderate</option>
+            <option value="active">Active</option>
+          </select>
+      </div>
+      <div class="div-form3">
+        <button id="generate" type="submit">Generate Meals</button>
+      </div>
+ </form>
+ <section id="meal" style="display: none">
+      <div id="card-headings">
+        <p>BREAKFAST</p>
+        <p>LUNCH</p>
+        <p>DINNER</p>
+      </div>
 
+      <p class="alterHeading">BREAKFAST</p>
+      <div class="column">
+        <div class="card">
+          <img
+            src="logo.jpg"
+            class="images"
+            id="breakfast-image"
+            alt="breakfast"
+          />
+          <div class="container">
+            <h4 class="card-title" id="breakfast-name"><b>Meal 1</b></h4>
+            <p>Calories- <span class="calories">0</span></p>
+            <button
+              class="recipe"
+              id="breakfast-button"
+              onclick="breakFastRecipe()"
+            >
+              GET RECIPE
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="alterHeading">LUNCH</p>
+      <div class="column">
+        <div class="card">
+          <img src="logo.jpg" class="images" id="lunch-image" alt="lunch" />
+          <div class="container">
+            <h4 class="card-title" id="lunch-name"><b>Meal 2</b></h4>
+            <p>Calories- <span class="calories">0</span></p>
+            <button class="recipe" id="lunch-button" onclick="lunchRecipe()">
+              GET RECIPE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="alterHeading">DINNER</p>
+      <div class="column">
+        <div class="card">
+          <img src="logo.jpg" class="images" id="dinner-image" alt="dinner" />
+          <div class="container">
+            <h4 class="card-title" id="dinner-name"><b>Meal 3</b></h4>
+            <p>Calories- <span class="calories">0</span></p>
+            <button class="recipe" id="dinner-button" onclick="dinnerRecipe()">
+              GET RECIPE
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="recipeSection"> -->
+    <section id="recipeSection" style="display: none">
+      <div class="tab">
+        <button class="tablinks" onclick="openContent(event, 'ingredients')">
+          <h3>Ingredients</h3>
+        </button>
+        <button class="tablinks" onclick="openContent(event, 'steps')">
+          <h3>Steps</h3>
+        </button>
+        <button class="tablinks" onclick="openContent(event, 'equipment')">
+          <h3>Equipment</h3>
+        </button>
+      </div>
+
+      <!-- Tab content -->
+      <div id="ingredients" class="tabcontent">
+        <ul id="ingredients-list"></ul>
+      </div>
+
+      <div id="steps" class="tabcontent">
+        <ol id="steps-list"></ol>
+      </div>
+
+      <div id="equipment" class="tabcontent">
+        <ul id="equipment-list"></ul>
+      </div>
+    </section>
+
+</body>
+</html>
